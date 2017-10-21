@@ -1,0 +1,50 @@
+<table class="tx-pb-concertlist" >
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.title" />
+		</td>
+		<td>
+			{concert.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.date" />
+		</td>
+		<td>
+			{concert.date -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.location" />
+		</td>
+		<td>
+			{concert.location}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.address" />
+		</td>
+		<td>
+			{concert.address}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.description" />
+		</td>
+		<td>
+			{concert.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pbconcertlist_domain_model_concert.mark_as_new_until" />
+		</td>
+		<td>
+			{concert.markAsNewUntil -> f:format.date()}
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+<file source-language="en" datatype="plaintext" original="messages" date="2016-08-17T16:16:45Z" product-name="pb_concertlist">
+	<header/>
+	<body>
+		<trans-unit id="title.description">
+			<source>title</source>
+		</trans-unit>
+		<trans-unit id="date.description">
+			<source>date</source>
+		</trans-unit>
+		<trans-unit id="location.description">
+			<source>location</source>
+		</trans-unit>
+		<trans-unit id="address.description">
+			<source>address</source>
+		</trans-unit>
+		<trans-unit id="description.description">
+			<source>description</source>
+		</trans-unit>
+		<trans-unit id="mark_as_new_until.description">
+			<source>markAsNewUntil</source>
+		</trans-unit>
+		<trans-unit id="url.description">
+			<source>url</source>
+		</trans-unit>
+	</body>
+</file>
+</xliff>

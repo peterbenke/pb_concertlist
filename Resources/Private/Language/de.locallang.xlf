@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-10-21T16:16:45Z" product-name="pb_concertlist">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_pbconcertlist_domain_model_concert">
+				<target>Konzert</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.title">
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.date">
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.location">
+				<target>Location</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.address">
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.description">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.contact">
+				<target>Kontakt</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status">
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.0">
+				<target>Gebucht</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.1">
+				<target>Geplant</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.fee">
+				<target>Gage</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.mark_as_new_until">
+				<target>Als "Neu" markieren bis</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.new">
+				<target>Neu!</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.url">
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.nodatafound">
+				<target>Derzeit keine anstehenden Konzerte</target>
+			</trans-unit>
+
+			<!-- ======================================================================================================================= -->
+
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.0">
+				<target>Sonntag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.1">
+				<target>Montag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.2">
+				<target>Dienstag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.3">
+				<target>Mittwoch</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.4">
+				<target>Donnerstag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.5">
+				<target>Freitag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.long.6">
+				<target>Samstag</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.0">
+				<target>So</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.1">
+				<target>Mo</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.2">
+				<target>Di</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.3">
+				<target>Mi</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.4">
+				<target>Do</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.5">
+				<target>Fr</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.weekday.short.6">
+				<target>Sa</target>
+			</trans-unit>
+
+			<!-- ======================================================================================================================= -->
+
+			<trans-unit id="tx_pbconcertlist_domain_model_url">
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_url.url">
+				<target>Website</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

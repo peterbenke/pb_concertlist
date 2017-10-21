@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-09-20T08:33:46Z" product-name="pb_concertlist">
+		<header/>
+		<body>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert">
+				<source>Concert</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.list">
+				<source>Concert list</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.title">
+				<source>Title (Eventname)</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.privateconcert">
+				<source>Private concert</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.0">
+				<source>Booked</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.1">
+				<source>Planned</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.fee">
+				<source>Fee</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.mark_as_new_until">
+				<source>Mark as new until</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.url">
+				<source>Website</source>
+			</trans-unit>
+
+			<trans-unit id="tx_pbconcertlist_domain_model_url">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_url.url">
+				<source>Website</source>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.concertType">
+				<source>Concert selection</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.allConcerts">
+				<source>All concerts</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyNew">
+				<source>Only prospective concerts</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyOld">
+				<source>Only expired concerts</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyNext">
+				<source>Only the next concert</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.fromTo">
+				<source>Within a period</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.fromTo.from">
+				<source>From</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.fromTo.to">
+				<source>To</source>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.public">
+				<source>Concert type (public)</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.allConcerts">
+				<source>Public and private (all)</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.onlyPublic">
+				<source>Only public</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.onlyPrivate">
+				<source>Only private</source>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.sorting">
+				<source>Order</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.sorting.dateDesc">
+				<source>New concerts first</source>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.sorting.dateAsc">
+				<source>Old concerts first</source>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.number">
+				<source>Number of concerts (0 = all)</source>
+			</trans-unit>
+
+			<trans-unit id="tx_pbconcertlist_feplugin.title">
+				<source>Concert list</source>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_feplugin.description">
+				<source>Plugin to list your concerts</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

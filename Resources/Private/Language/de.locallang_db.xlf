@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-09-20T08:33:46Z" product-name="pb_concertlist">
+		<header/>
+		<body>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert">
+				<target>Konzert</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.list">
+				<target>Konzertliste</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.title">
+				<target>Titel (Name der Veranstaltung)</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.date">
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.location">
+				<target>Location</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.address">
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.description">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.contact">
+				<target>Kontakt</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.privateconcert">
+				<target>Privates Konzert</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status">
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.0">
+				<target>Gebucht</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.status.I.1">
+				<target>Geplant</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.fee">
+				<target>Gage</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.mark_as_new_until">
+				<target>Als "Neu" markieren bis</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_concert.url">
+				<target>Website</target>
+			</trans-unit>
+
+			<trans-unit id="tx_pbconcertlist_domain_model_url">
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_domain_model_url.url">
+				<target>Website</target>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.concertType">
+				<target>Konzert - Auswahl</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.allConcerts">
+				<target>Alle Konzerte</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyNew">
+				<target>Nur anstehende Konzerte</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyOld">
+				<target>Nur abgelaufene Konzerte</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.onlyNext">
+				<target>Nur das nächste Konzert</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.concertType.fromTo">
+				<target>Innerhalb eines Zeitraums</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.fromTo.from">
+				<target>Von</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.fromTo.to">
+				<target>Bis</target>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.public">
+				<target>Konzerttyp (Öffentlichkeit)</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.allConcerts">
+				<target>Öffentliche und private (alle)</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.onlyPublic">
+				<target>Nur öffentliche</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.public.onlyPrivate">
+				<target>Nur private</target>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.selection.sorting">
+				<target>Reihenfolge</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.sorting.dateDesc">
+				<target>Neuere zuerst</target>
+			</trans-unit>
+			<trans-unit id="pi1_flexform.selection.sorting.dateAsc">
+				<target>Ältere zuerst</target>
+			</trans-unit>
+
+			<trans-unit id="pi1_flexform.number">
+				<target>Anzahl Konzerte (0 = alle)</target>
+			</trans-unit>
+
+			<trans-unit id="tx_pbconcertlist_feplugin.title">
+				<target>Konzertliste</target>
+			</trans-unit>
+			<trans-unit id="tx_pbconcertlist_feplugin.description">
+				<target>Plugin zur Auflistung Deiner Konzerte</target>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

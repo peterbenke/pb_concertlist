@@ -1,0 +1,67 @@
+{namespace pb = PeterBenke\PbConcertlist\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:if condition="{concerts}">
+		<f:then>	
+	
+			<table class="tx_pbconcertlist" >
+				<tr>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.date" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.title" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.location" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.address" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.description" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.contact" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.url" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.status" /></th>
+					<th><f:translate key="tx_pbconcertlist_domain_model_concert.fee" /></th>
+					<th></th>
+				</tr>
+
+				<f:for each="{concerts}" as="concert">
+				<tr class="status-{concert.status}{pb:isOver(date:concert.date, then: ' over')}">
+					<td>
+						<f:translate key="tx_pbconcertlist_domain_model_concert.weekday.short.{pb:weekday(date:concert.date)}" />,
+						<f:format.date format="d.m.Y">{concert.date}</f:format.date>
+					</td>
+					<td>{concert.title}</td>
+					<td>{concert.location}</td>
+					<td><f:format.nl2br>{concert.address}</f:format.nl2br></td>
+					<td><f:format.nl2br>{concert.description}</f:format.nl2br></td>
+					<td><f:format.nl2br>{concert.contact}</f:format.nl2br></td>
+					<td>
+						<f:for each="{concert.url}" as="website">
+							<a rel="nofollow" href="{website.url}">{website.url}</a>
+						</f:for>
+					</td>
+					<td>
+						<f:if condition="{concert.status}">
+							<f:then>
+								<f:translate key="tx_pbconcertlist_domain_model_concert.status.I.1" />
+							</f:then>
+							<f:else>
+								<f:translate key="tx_pbconcertlist_domain_model_concert.status.I.0" />
+							</f:else>
+						</f:if>
+					</td>
+					<td>{concert.fee}</td>
+					<td{pb:markAsNew(markAsNewUntil:concert.markAsNewUntil, then: ' class="new"')}>
+						<pb:markAsNew markAsNewUntil="{concert.markAsNewUntil}">
+							<f:translate key="tx_pbconcertlist_domain_model_concert.new" />
+						</pb:markAsNew>
+					</td>
+				</tr>
+				</f:for>
+			</table>
+			
+		</f:then>
+		<f:else>
+
+			<p><f:translate key="tx_pbconcertlist_domain_model_concert.nodatafound" /></p>
+			
+		</f:else>
+	</f:if>			
+
+</f:section>

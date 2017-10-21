@@ -1,0 +1,31 @@
+{
+  "name": "peterbenke/pb-concertlist",
+  "type": "typo3-cms-extension",
+  "description": "This extension generates a list of concerts for bands",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "frontend",
+    "notifications"
+  ],
+  "homepage": "http://www.typomotor.de",
+  "authors": [
+    {
+      "name": "Peter Benke",
+      "role": "Developer",
+      "homepage": "http://www.typomotor.de"
+    }
+  ],
+  "license": [
+    "GPL-2.0+"
+  ],
+  "require": {
+    "typo3/cms-core": ">=7.6.0 <=8.7.99"
+  },
+  "version": "3.0.0",
+  "autoload": {
+    "psr-4": {
+      "PeterBenke\\PbConcertlist\\": "Classes"
+    }
+  }
+}

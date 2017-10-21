@@ -1,0 +1,10 @@
+plugin.tx_pbconcertlist {
+	view {
+		templateRootPaths.0 = {$plugin.tx_pbconcertlist.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_pbconcertlist.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_pbconcertlist.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_pbconcertlist.persistence.storagePid}
+	}
+}

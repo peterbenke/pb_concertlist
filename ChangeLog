@@ -1,0 +1,19 @@
+2017-10-21  Peter Benke  <info@typomotor.de>
+
+	* 3.0.0 Complete refactored. TYPO3 7.6 - 8.7
+
+2015-03-10  Peter Benke  <info@typomotor.de>
+
+	* 2.0.1 Plugin is cachable now
+
+2015-02-26  Peter Benke  <info@typomotor.de>
+
+	* 2.0.0 Breaking Changes for TYPO3 6.2 - 7.1
+
+2013-11-22  Peter Benke  <info@typomotor.de>
+
+	* 1.0.1 Extension icon .gif
+
+2013-11-05  Peter Benke  <info@typomotor.de>
+
+	* Init Version
