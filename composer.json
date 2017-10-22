@@ -22,7 +22,6 @@
   "require": {
     "typo3/cms-core": ">=7.6.0 <=8.7.99"
   },
-  "version": "3.0.0",
   "autoload": {
     "psr-4": {
       "PeterBenke\\PbConcertlist\\": "Classes"
