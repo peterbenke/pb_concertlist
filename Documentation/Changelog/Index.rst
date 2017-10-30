@@ -14,6 +14,7 @@ ChangeLog
 ========  ======================================================
 Version:  Changes:
 ========  ======================================================
+3.0.1     Adding additional css-classes. Small bugfix in Plugin wizard
 3.0.0     Complete refactored. TYPO3 7.6 - 8.7
 2.0.1     Plugin is cachable now
 2.0.0     Breaking changes for TYPO3 6.2 - 7.1

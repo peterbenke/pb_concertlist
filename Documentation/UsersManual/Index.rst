@@ -50,6 +50,21 @@ Now go to the page, where you want to display the concertlist and create a new c
 You have to input the pid (Page Id) of the sysfolder in the constant editor => See more in the chapter “Administration”.
 Otherwise select this sysfolder for the  "Records Storage Page".
 
+If you want to have different plugins on one page, you can style them with the following classes (see also source code):
+
+
+=============  ======================================================
+Css class      Description
+=============  ======================================================
+all            All concerts
+prospective    Only upcoming concerts
+expired        Only concerts in the past
+next           Only the next concert
+period         Only concerts in a defined time period
+=============  ======================================================
+
+
+
 Weekdays
 ----------
 

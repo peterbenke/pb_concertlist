@@ -4,9 +4,10 @@
 <f:section name="main">
 
 	<f:if condition="{concerts}">
-		<f:then>	
-	
-			<table class="tx_pbconcertlist" >
+		<f:then>
+
+			<table class="tx_pbconcertlist <f:switch expression="{settings.selection}"><f:case value="1">all</f:case><f:case value="2">prospective</f:case><f:case value="3">expired</f:case><f:case value="4">next</f:case><f:case value="5">period</f:case></f:switch>">
+
 				<tr>
 					<th><f:translate key="tx_pbconcertlist_domain_model_concert.date" /></th>
 					<th><f:translate key="tx_pbconcertlist_domain_model_concert.title" /></th>
