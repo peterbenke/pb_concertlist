@@ -59,7 +59,7 @@ return [
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
 				'items' => [
@@ -75,7 +75,7 @@ return [
 			],
 		],
 		't3ver_label' => [
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
@@ -93,7 +93,7 @@ return [
 		'starttime' => [
 			'exclude' => 1,
 			'l10n_mode' => 'mergeIfNotBlank',
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
@@ -109,7 +109,7 @@ return [
 		'endtime' => [
 			'exclude' => 1,
 			'l10n_mode' => 'mergeIfNotBlank',
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.endtime',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
