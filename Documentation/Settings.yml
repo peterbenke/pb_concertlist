@@ -6,6 +6,6 @@
 conf.py:
   copyright: 2017
   project: Concert list for bands
-  version: 3.0.2
+  version: 3.0.3
   release: 3.0
 ...

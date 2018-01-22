@@ -14,7 +14,8 @@ ChangeLog
 ========  ======================================================
 Version:  Changes:
 ========  ======================================================
-3.0.2     Change locallang path to xlf
+3.0.3     Change locallang path to xlf
+3.0.2     ---
 3.0.1     Adding additional css-classes. Small bugfix in Plugin wizard
 3.0.0     Complete refactored. TYPO3 7.6 - 8.7
 2.0.1     Plugin is cachable now
