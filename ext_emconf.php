@@ -1,5 +1,5 @@
 <?php
-
+// Add comment for push event on github
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Concert list',
 	'description' => 'This extension generates a list of concerts for bands',
