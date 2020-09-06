@@ -6,7 +6,7 @@ defined('TYPO3_MODE') or die();
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 
-	'PeterBenke.' . $_EXTKEY,
+	'PeterBenke.pb_concertlist',
 
 	'Fepluginconcertlist',
 
@@ -34,7 +34,7 @@ if (TYPO3_MODE == 'BE') {
 		$iconRegistry->registerIcon(
 			$identifier,
 			$iconRegistry->detectIconProvider($filename),
-			['source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/' . $filename]
+			['source' => 'EXT:pb_concertlist/Resources/Public/Icons/' . $filename]
 		);
 	}
 }

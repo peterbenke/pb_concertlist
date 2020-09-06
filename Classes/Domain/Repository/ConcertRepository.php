@@ -1,63 +1,44 @@
 <?php
 namespace PeterBenke\PbConcertlist\Domain\Repository;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2012-2017 Peter Benke <info@typomotor.de>, TYPO motor
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  *
  * ConcertRepository
  *
  */
-class ConcertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class ConcertRepository extends Repository {
 
 	/**
-	 * Returns all objects of this repository (MIT Sortierung)
+	 * Returns all objects of this repository (incl. ordering)
 	 * @var array Sorting
 	 *
 	 * @return array An array of objects, empty if no objects found
 	*/
-	public function findAll($sorting = array('date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)) {
-		
+	public function findAll($sorting = array('date' => QueryInterface::ORDER_DESCENDING)) {
+
 		$query = $this->createQuery();
 		$query->setOrderings($sorting);
 		
 		return $query->execute();
 		
 	}
-	
+
 	/**
 	 * Returns all objects of this repository
-	 * @var int Selection
-	 * @var string Public all/public/private
-	 * @var string Sorting ASC/DESC
-	 * @var int Limit
-	 * @var int Date from timestamp
-	 * @var int Date to timestamp
-	 *
-	 * @return array An array of objects, empty if no objects found
-	*/
+	 * @param int $selection
+	 * @param string $public all/public/private
+	 * @param string $sorting ASC/DESC
+	 * @param int $number Limit
+	 * @param int $dateFrom timestamp
+	 * @param int $dateTo timestamp
+	 * @return array|QueryResultInterface
+	 * @throws InvalidQueryException
+	 */
 	public function findAllBySelection(
 		$selection,
 		$public,
@@ -70,9 +51,9 @@ class ConcertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		$selection = intval($selection);
 		
 		if($sorting != 'ASC'){
-			$sortArray = array('date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING);
+			$sortArray = array('date' => QueryInterface::ORDER_DESCENDING);
 		} else{
-			$sortArray = array('date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING);
+			$sortArray = array('date' => QueryInterface::ORDER_ASCENDING);
 		}
 		
 		$number = intval($number);
@@ -82,7 +63,7 @@ class ConcertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		if($number > 0){
 			$query->setLimit($number);
 		}
-		
+
 		$dateFrom	= intval($dateFrom);
 		$dateTo		= intval($dateTo);
 		
@@ -112,7 +93,7 @@ class ConcertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			case 4:
 				#$query->matching($query->logicalAnd($query->greaterThanOrEqual('date', time())));
 				$where[] = $query->greaterThanOrEqual('date', time()-86400);
-				$query->setOrderings(array('date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+				$query->setOrderings(array('date' => QueryInterface::ORDER_ASCENDING));
 				$query->setLimit(1);
 
 			break;
@@ -142,6 +123,10 @@ class ConcertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		if(!empty($where)){
 			$query->matching($query->logicalAnd($where));
 		}
+
+		// $queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
+		// \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getSQL());
+		// \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getParameters());
 
 		return $query->execute();
 		

@@ -1,119 +1,77 @@
 <?php
 namespace PeterBenke\PbConcertlist\Domain\Model;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2012-2017 Peter Benke <info@typomotor.de>, TYPO motor
- *  
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
+use DateTime;
 
 /**
  *
  * Concert
  *
  */
-class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Concert extends AbstractEntity {
 
 	/**
-	 * title
-	 *
 	 * @var string
-	 * @validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
 	 */
 	protected $title;
 
 	/**
-	 * date
-	 *
-	 * @var \DateTime
-	 * @validate NotEmpty
+	 * @var DateTime
+	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
 	 */
 	protected $date;
 
 	/**
-	 * location
-	 *
 	 * @var string
-	 * @validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
 	 */
 	protected $location;
 
 	/**
-	 * address
-	 *
 	 * @var string
 	 */
 	protected $address;
 
 	/**
-	 * description
-	 *
 	 * @var string
 	 */
 	protected $description;
 
 	/**
-	 * contact
-	 *
 	 * @var string
 	 */
 	protected $contact;
 
 	/**
-	 * privateconcert
 	 * @var integer
 	 */
 	protected $privateconcert;
 	
 	/**
-	 * status
-	 *
 	 * @var string
 	 */
 	protected $status;
 
 	/**
-	 * fee
-	 *
 	 * @var string
 	 */
 	protected $fee;
 
 	/**
-	 * markAsNewUntil
-	 *
-	 * @var \DateTime
+	 * @var DateTime
 	 */
 	protected $markAsNewUntil;
 
 	/**
-	 * url
-	 *
+	 * Attention: qualifier has to be complete and cannot be replaced with an import!
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PeterBenke\PbConcertlist\Domain\Model\Url>
 	 */
 	protected $url;
 
 	/**
-	 * Returns the title
-	 *
 	 * @return string $title
 	 */
 	public function getTitle() {
@@ -121,8 +79,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the title
-	 *
 	 * @param string $title
 	 * @return void
 	 */
@@ -131,18 +87,14 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the date
-	 *
-	 * @return \DateTime $date
+	 * @return DateTime $date
 	 */
 	public function getDate() {
 		return $this->date;
 	}
 
 	/**
-	 * Sets the date
-	 *
-	 * @param \DateTime $date
+	 * @param DateTime $date
 	 * @return void
 	 */
 	public function setDate($date) {
@@ -150,8 +102,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the location
-	 *
 	 * @return string $location
 	 */
 	public function getLocation() {
@@ -159,8 +109,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the location
-	 *
 	 * @param string $location
 	 * @return void
 	 */
@@ -169,8 +117,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the address
-	 *
 	 * @return string $address
 	 */
 	public function getAddress() {
@@ -178,8 +124,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the address
-	 *
 	 * @param string $address
 	 * @return void
 	 */
@@ -188,8 +132,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the description
-	 *
 	 * @return string $description
 	 */
 	public function getDescription() {
@@ -197,8 +139,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the description
-	 *
 	 * @param string $description
 	 * @return void
 	 */
@@ -207,8 +147,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 	
 	/**
-	 * Returns the contact
-	 *
 	 * @return string $contact
 	 */
 	public function getContact() {
@@ -216,8 +154,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the contact
-	 *
 	 * @param string $contact
 	 * @return void
 	 */
@@ -226,17 +162,13 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the privateconcert
-	 *
-	 * @return integer privateconcert
+	 * @return integer
 	 */
 	public function getPrivateconcert() {
 		return $this->privateconcert;
 	}
 	
 	/**
-	 * Setter for privateconcert
-	 *
 	 * @param integer $privateconcert
 	 * @return void
 	 */
@@ -245,17 +177,13 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the status
-	 *
-	 * @return string status
+	 * @return string
 	 */
 	public function getStatus() {
 		return $this->status;
 	}
 
 	/**
-	 * Setter for status
-	 *
 	 * @param string $status
 	 * @return void
 	 */
@@ -264,8 +192,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the fee
-	 *
 	 * @return string fee
 	 */
 	public function getFee() {
@@ -273,8 +199,6 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Setter for fee
-	 *
 	 * @param string $fee
 	 * @return void
 	 */
@@ -283,18 +207,14 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the markAsNewUntil
-	 *
-	 * @return \DateTime $markAsNewUntil
+	 * @return DateTime $markAsNewUntil
 	 */
 	public function getMarkAsNewUntil() {
 		return $this->markAsNewUntil;
 	}
 
 	/**
-	 * Sets the markAsNewUntil
-	 *
-	 * @param \DateTime $markAsNewUntil
+	 * @param DateTime $markAsNewUntil
 	 * @return void
 	 */
 	public function setMarkAsNewUntil($markAsNewUntil) {
@@ -302,28 +222,23 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a Url
-	 *
-	 * @param \PeterBenke\PbConcertlist\Domain\Model\Url $url
+	 * @param Url $url
 	 * @return void
 	 */
-	public function addUrl(\PeterBenke\PbConcertlist\Domain\Model\Url $url) {
+	public function addUrl(Url $url) {
 		$this->url->attach($url);
 	}
 
 	/**
-	 * Removes a Url
-	 *
-	 * @param \PeterBenke\PbConcertlist\Domain\Model\Url $urlToRemove The Url to be removed
+	 * @param Url $urlToRemove The Url to be removed
 	 * @return void
 	 */
-	public function removeUrl(\PeterBenke\PbConcertlist\Domain\Model\Url $urlToRemove) {
+	public function removeUrl(Url $urlToRemove) {
 		$this->url->detach($urlToRemove);
 	}
 
 	/**
-	 * Returns the url
-	 *
+	 * Attention: qualifier has to be complete and cannot be replaced with an import!
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PeterBenke\PbConcertlist\Domain\Model\Url> $url
 	 */
 	public function getUrl() {
@@ -331,8 +246,7 @@ class Concert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the url
-	 *
+	 * Attention: qualifier has to be complete and cannot be replaced with an import!
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PeterBenke\PbConcertlist\Domain\Model\Url> $url
 	 * @return void
 	 */

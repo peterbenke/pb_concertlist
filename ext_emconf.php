@@ -1,22 +1,19 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-	'title' => 'Concertlist',
+	'title' => 'Concert list',
 	'description' => 'This extension generates a list of concerts for bands',
 	'category' => 'fe',
+	'version' => '4.0.0',
+	'state' => 'stable',
 	'author' => 'Peter Benke',
 	'author_email' => 'info@typomotor.de',
 	'author_company' => 'TYPO motor',
-	'state' => 'stable',
-	'uploadfolder' => 0,
-	'clearCacheOnLoad' => 1,
-	'version' => '3.0.4',
-	'constraints' => [
+	'constraints' =>[
 		'depends' => [
-			'typo3' => '7.6.0-8.7.99',
+			'typo3' => '9.5.0-9.5.99',
+			'php' => '7.2',
 		],
-		'conflicts' => [],
-		'suggests' => [],
 	],
 ];
 
