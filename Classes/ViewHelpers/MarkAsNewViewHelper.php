@@ -1,20 +1,29 @@
 <?php
 namespace PeterBenke\PbConcertlist\ViewHelpers;
 
+/**
+ * TYPO3Fluid
+ */
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
-use \DateTime;
+
+/**
+ * Php
+ */
+use DateTime;
 
 /**
  *
  * MarkAsNewViewHelper
  *
  */
-class MarkAsNewViewHelper extends AbstractConditionViewHelper {
+class MarkAsNewViewHelper extends AbstractConditionViewHelper
+{
 
 	/**
 	 * Initialize arguments
 	 */
-	public function initializeArguments(){
+	public function initializeArguments()
+	{
 		$this->registerArgument('markAsNewUntil', 'object', 'DateTime object');
 		parent::initializeArguments();
 	}
@@ -24,7 +33,8 @@ class MarkAsNewViewHelper extends AbstractConditionViewHelper {
 	 * @param array|null $arguments
 	 * @return bool
 	 */
-	protected static function evaluateCondition($arguments = null) {
+	protected static function evaluateCondition($arguments = null): bool
+	{
 
 		if(isset($arguments['markAsNewUntil'])){
 			$date = $arguments['markAsNewUntil'];
@@ -33,7 +43,6 @@ class MarkAsNewViewHelper extends AbstractConditionViewHelper {
 					return true;
 				}
 			}
-
 		}
 
 		return false;

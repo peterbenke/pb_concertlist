@@ -1,15 +1,21 @@
 <?php
 namespace PeterBenke\PbConcertlist\ViewHelpers;
 
+/**
+ * TYPO3Fluid
+ */
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
-use \DateTime;
 
 /**
- *
- * IsOverViewHelper
- *
+ * DateTime
  */
-class IsOverViewHelper extends AbstractConditionViewHelper {
+use DateTime;
+
+/**
+ * IsOverViewHelper
+ */
+class IsOverViewHelper extends AbstractConditionViewHelper
+{
 
 	/**
 	 * Initialize arguments
@@ -19,13 +25,13 @@ class IsOverViewHelper extends AbstractConditionViewHelper {
 		parent::initializeArguments();
 	}
 
-
 	/**
 	 * Evaluate
 	 * @param array|null $arguments
 	 * @return bool
 	 */
-	protected static function evaluateCondition($arguments = null) {
+	protected static function evaluateCondition($arguments = null): bool
+	{
 
 		if(isset($arguments['date'])){
 			$date = $arguments['date'];
@@ -34,7 +40,6 @@ class IsOverViewHelper extends AbstractConditionViewHelper {
 					return true;
 				}
 			}
-
 		}
 
 		return false;

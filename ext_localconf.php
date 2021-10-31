@@ -5,18 +5,13 @@ defined('TYPO3_MODE') or die();
  * Configure plugin
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-
 	'PeterBenke.pb_concertlist',
-
 	'Fepluginconcertlist',
-
 	[
 		'Concert' => 'list',
 	],
-
 	// non-cacheable actions
 	[]
-
 );
 
 /**

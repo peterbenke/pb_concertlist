@@ -1,6 +1,9 @@
 <?php
 namespace PeterBenke\PbConcertlist\Domain\Model;
 
+/**
+ * TYPO3
+ */
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 /**
@@ -8,31 +11,27 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
  * Url
  *
  */
-class Url extends AbstractValueObject {
+class Url extends AbstractValueObject
+{
 
 	/**
-	 * url
-	 *
-	 * @var string
+	 * @var string|null
 	 */
 	protected $url;
 
 	/**
-	 * Returns the url
-	 *
-	 * @return string $url
+	 * @return string|null $url
 	 */
-	public function getUrl() {
+	public function getUrl(): ?string
+	{
 		return $this->url;
 	}
 
 	/**
-	 * Sets the url
-	 *
-	 * @param string $url
-	 * @return void
+	 * @param string|null $url
 	 */
-	public function setUrl($url) {
+	public function setUrl(?string $url)
+	{
 		$this->url = $url;
 	}
 

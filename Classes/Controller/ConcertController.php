@@ -2,40 +2,46 @@
 namespace PeterBenke\PbConcertlist\Controller;
 
 /**
+ * PbConcertlist
+ */
+use PeterBenke\PbConcertlist\Domain\Repository\ConcertRepository;
+
+/**
+ * TYPO3
+ */
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+
+/**
  *
  * ConcertController
  *
  */
-class ConcertController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ConcertController extends ActionController
+{
 
 	/**
-	 * concertRepository
-	 *
-	 * @var \PeterBenke\PbConcertlist\Domain\Repository\ConcertRepository
+	 * @var ConcertRepository
 	 */
 	protected $concertRepository;
 
 	/**
-	 * @param \PeterBenke\PbConcertlist\Domain\Repository\ConcertRepository $concertRepository
+	 * Extbase standard function
+	 * @param ViewInterface $view
+	 * @return void
 	 */
-	public function injectConcertRepository(\PeterBenke\PbConcertlist\Domain\Repository\ConcertRepository $concertRepository)
+	public function initializeView(ViewInterface $view)
 	{
-		$this->concertRepository = $concertRepository;
+		$this->concertRepository = $this->objectManager->get(ConcertRepository::class);
 	}
 
 	/**
+	 * List the concerts
 	 * @return void
-	 * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+	 * @throws InvalidQueryException
 	 */
 	public function listAction() {
-
-		// $sorting = Array('date' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING);
-		// setlocale (LC_ALL, 'de_DE');
-		// echo '<pre>';
-		// print_r($this->settings);
-		// echo '</pre>';
-
-		// die();
 
 		$concerts = $this->concertRepository->findAllBySelection(
 			intval($this->settings['selection']),

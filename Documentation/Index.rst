@@ -29,7 +29,7 @@ Concert list for bands
         concerts, bands, music, list
 
     :Copyright:
-        2017
+        2021
 
     :Author:
         Peter Benke

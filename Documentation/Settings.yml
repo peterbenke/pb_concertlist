@@ -4,8 +4,8 @@
 
 ---
 conf.py:
-  copyright: 2017
+  copyright: 2021
   project: Concert list for bands
-  version: 3.0
-  release: 3.0.4
+  version: 10.4
+  release: 10.4.0
 ...
