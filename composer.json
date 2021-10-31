@@ -18,7 +18,7 @@
   ],
   "license": ["GPL-2.0-or-later"],
   "require": {
-    "php": ">=7.3.0",
+    "php": ">=7.2.0",
     "typo3/cms-core": "~10.4.0||dev-master"
   },
   "autoload": {
