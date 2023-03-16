@@ -8,7 +8,7 @@ defined('TYPO3_MODE') or die();
 	'PeterBenke.pb_concertlist',
 	'Fepluginconcertlist',
 	[
-		'Concert' => 'list',
+		'PeterBenke\PbConcertlist\Controller\ConcertController' => 'list',
 	],
 	// non-cacheable actions
 	[]
