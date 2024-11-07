@@ -1,38 +1,41 @@
 <?php
+
 namespace PeterBenke\PbConcertlist\Domain\Model;
 
 /**
  * TYPO3
  */
+
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 /**
- *
- * Url
- *
+ * Class Url
+ * @noinspection PhpUnused
  */
 class Url extends AbstractValueObject
 {
 
-	/**
-	 * @var string|null
-	 */
-	protected $url;
+    /**
+     * @var string|null
+     */
+    protected ?string $url;
 
-	/**
-	 * @return string|null $url
-	 */
-	public function getUrl(): ?string
-	{
-		return $this->url;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
 
-	/**
-	 * @param string|null $url
-	 */
-	public function setUrl(?string $url)
-	{
-		$this->url = $url;
-	}
+    /**
+     * @param string|null $url
+     * @noinspection PhpUnused
+     */
+    public function setUrl(?string $url): void
+    {
+        $this->url = $url;
+    }
 
 }

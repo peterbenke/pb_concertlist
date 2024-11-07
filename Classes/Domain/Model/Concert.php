@@ -1,282 +1,302 @@
 <?php
-namespace PeterBenke\PbConcertlist\Domain\Model;
 
-/**
- * PbConcertlist
- */
-use PeterBenke\PbConcertlist\Domain\Model\Url;
+namespace PeterBenke\PbConcertlist\Domain\Model;
 
 /**
  * TYPO3
  */
+
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * DateTime
  */
+
 use DateTime;
 
 /**
- *
- * Concert
- *
+ * Class Concert
+ * @noinspection PhpUnused
  */
 class Concert extends AbstractEntity
 {
 
-	/**
-	 * @var string|null
-	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
-	 */
-	protected $title;
+    /**
+     * @var string|null
+     */
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected ?string $title;
 
-	/**
-	 * @var DateTime|null
-	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
-	 */
-	protected $date;
+    /**
+     * @var DateTime|null
+     */
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected ?DateTime $date;
 
-	/**
-	 * @var string|null
-	 * @TYPO3\CMS\Extbase\Annotation\Validate ("NotEmpty")
-	 */
-	protected $location;
+    /**
+     * @var string|null
+     */
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected ?string $location;
 
-	/**
-	 * @var string|null
-	 */
-	protected $address;
+    /**
+     * @var string|null
+     */
+    protected ?string $address;
 
-	/**
-	 * @var string|null
-	 */
-	protected $description;
+    /**
+     * @var string|null
+     */
+    protected ?string $description;
 
-	/**
-	 * @var string|null
-	 */
-	protected $contact;
+    /**
+     * @var string|null
+     */
+    protected ?string $contact;
 
-	/**
-	 * @var int|null
-	 */
-	protected $privateconcert;
-	
-	/**
-	 * @var string|null
-	 */
-	protected $status;
+    /**
+     * @var int|null
+     */
+    protected ?int $privateconcert;
 
-	/**
-	 * @var string|null
-	 */
-	protected $fee;
+    /**
+     * @var string|null
+     */
+    protected ?string $status;
 
-	/**
-	 * @var DateTime|null
-	 */
-	protected $markAsNewUntil;
+    /**
+     * @var string|null
+     */
+    protected ?string $fee;
 
-	/**
-	 * Attention: qualifier has to be complete and cannot be replaced with an import!
-	 * @var ObjectStorage<Url>|null
-	 */
-	protected $url;
+    /**
+     * @var DateTime|null
+     */
+    protected ?DateTime $markAsNewUntil;
 
-	/**
-	 * @return string|null $title
-	 */
-	public function getTitle(): ?string
-	{
-		return $this->title;
-	}
+    /**
+     * Attention: qualifier has to be complete and cannot be replaced with an import!
+     * @var ObjectStorage<Url>|null
+     */
+    protected ?ObjectStorage $url;
 
-	/**
-	 * @param string|null $title
-	 */
-	public function setTitle(?string $title)
-	{
-		$this->title = $title;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
 
-	/**
-	 * @return DateTime|null $date
-	 */
-	public function getDate(): ?DateTime
-	{
-		return $this->date;
-	}
+    /**
+     * @param string|null $title
+     * @noinspection PhpUnused
+     */
+    public function setTitle(?string $title): void
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * @param DateTime|null $date
-	 */
-	public function setDate(?DateTime $date)
-	{
-		$this->date = $date;
-	}
+    /**
+     * @return DateTime|null
+     * @noinspection PhpUnused
+     */
+    public function getDate(): ?DateTime
+    {
+        return $this->date;
+    }
 
-	/**
-	 * @return string|null $location
-	 */
-	public function getLocation(): ?string
-	{
-		return $this->location;
-	}
+    /**
+     * @param DateTime|null $date
+     * @noinspection PhpUnused
+     */
+    public function setDate(?DateTime $date): void
+    {
+        $this->date = $date;
+    }
 
-	/**
-	 * @param string|null $location
-	 */
-	public function setLocation(?string $location)
-	{
-		$this->location = $location;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
 
-	/**
-	 * @return string|null $address
-	 */
-	public function getAddress(): ?string
-	{
-		return $this->address;
-	}
+    /**
+     * @param string|null $location
+     * @noinspection PhpUnused
+     */
+    public function setLocation(?string $location): void
+    {
+        $this->location = $location;
+    }
 
-	/**
-	 * @param string|null $address
-	 */
-	public function setAddress(?string $address)
-	{
-		$this->address = $address;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
 
-	/**
-	 * @return string|null $description
-	 */
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    /**
+     * @param string|null $address
+     * @noinspection PhpUnused
+     */
+    public function setAddress(?string $address): void
+    {
+        $this->address = $address;
+    }
 
-	/**
-	 * @param string|null $description
-	 */
-	public function setDescription(?string $description)
-	{
-		$this->description = $description;
-	}
-	
-	/**
-	 * @return string|null $contact
-	 */
-	public function getContact(): ?string
-	{
-		return $this->contact;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	/**
-	 * @param string|null $contact
-	 */
-	public function setContact(?string $contact)
-	{
-		$this->contact = $contact;
-	}
+    /**
+     * @param string|null $description
+     * @noinspection PhpUnused
+     */
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
 
-	/**
-	 * @return integer|null
-	 */
-	public function getPrivateconcert(): ?int
-	{
-		return $this->privateconcert;
-	}
-	
-	/**
-	 * @param integer|null $privateconcert
-	 */
-	public function setPrivateconcert(?int $privateconcert)
-	{
-		$this->privateconcert = $privateconcert;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getContact(): ?string
+    {
+        return $this->contact;
+    }
 
-	/**
-	 * @return string|null
-	 */
-	public function getStatus(): ?string
-	{
-		return $this->status;
-	}
+    /**
+     * @param string|null $contact
+     * @noinspection PhpUnused
+     */
+    public function setContact(?string $contact): void
+    {
+        $this->contact = $contact;
+    }
 
-	/**
-	 * @param string|null $status
-	 */
-	public function setStatus(?string $status)
-	{
-		$this->status = $status;
-	}
+    /**
+     * @return integer|null
+     * @noinspection PhpUnused
+     */
+    public function getPrivateconcert(): ?int
+    {
+        return $this->privateconcert;
+    }
 
-	/**
-	 * @return string|null fee
-	 */
-	public function getFee(): ?string
-	{
-		return $this->fee;
-	}
+    /**
+     * @param integer|null $privateconcert
+     * @noinspection PhpUnused
+     */
+    public function setPrivateconcert(?int $privateconcert): void
+    {
+        $this->privateconcert = $privateconcert;
+    }
 
-	/**
-	 * @param string|null $fee
-	 */
-	public function setFee(?string $fee)
-	{
-		$this->fee = $fee;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
 
-	/**
-	 * @return DateTime|null $markAsNewUntil
-	 */
-	public function getMarkAsNewUntil(): ?DateTime
-	{
-		return $this->markAsNewUntil;
-	}
+    /**
+     * @param string|null $status
+     * @noinspection PhpUnused
+     */
+    public function setStatus(?string $status): void
+    {
+        $this->status = $status;
+    }
 
-	/**
-	 * @param DateTime|null $markAsNewUntil
-	 */
-	public function setMarkAsNewUntil(?DateTime $markAsNewUntil)
-	{
-		$this->markAsNewUntil = $markAsNewUntil;
-	}
+    /**
+     * @return string|null
+     * @noinspection PhpUnused
+     */
+    public function getFee(): ?string
+    {
+        return $this->fee;
+    }
 
-	/**
-	 * @param Url|null $url
-	 */
-	public function addUrl(?Url $url)
-	{
-		$this->url->attach($url);
-	}
+    /**
+     * @param string|null $fee
+     * @noinspection PhpUnused
+     */
+    public function setFee(?string $fee): void
+    {
+        $this->fee = $fee;
+    }
 
-	/**
-	 * @param Url|null $urlToRemove The Url to be removed
-	 */
-	public function removeUrl(?Url $urlToRemove)
-	{
-		$this->url->detach($urlToRemove);
-	}
+    /**
+     * @return DateTime|null
+     * @noinspection PhpUnused
+     */
+    public function getMarkAsNewUntil(): ?DateTime
+    {
+        return $this->markAsNewUntil;
+    }
 
-	/**
-	 * Attention: qualifier has to be complete and cannot be replaced with an import!
-	 * @return ObjectStorage<Url>|null $url
-	 */
-	public function getUrl(): ?ObjectStorage
-	{
-		return $this->url;
-	}
+    /**
+     * @param DateTime|null $markAsNewUntil
+     * @noinspection PhpUnused
+     */
+    public function setMarkAsNewUntil(?DateTime $markAsNewUntil): void
+    {
+        $this->markAsNewUntil = $markAsNewUntil;
+    }
 
-	/**
-	 * Attention: qualifier has to be complete and cannot be replaced with an import!
-	 * @param ObjectStorage<Url> $url
-	 * @return void
-	 */
-	public function setUrl(ObjectStorage $url)
-	{
-		$this->url = $url;
-	}
+    /**
+     * @param Url|null $url
+     * @noinspection PhpUnused
+     */
+    public function addUrl(?Url $url): void
+    {
+        $this->url->attach($url);
+    }
+
+    /**
+     * @param Url|null $urlToRemove
+     * @noinspection PhpUnused
+     */
+    public function removeUrl(?Url $urlToRemove): void
+    {
+        $this->url->detach($urlToRemove);
+    }
+
+    /**
+     * @return ObjectStorage<Url>|null $url
+     * @noinspection PhpUnused
+     */
+    public function getUrl(): ?ObjectStorage
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param ObjectStorage<Url> $url
+     * @return void
+     * @noinspection PhpUnused
+     */
+    public function setUrl(ObjectStorage $url): void
+    {
+        $this->url = $url;
+    }
 
 }
