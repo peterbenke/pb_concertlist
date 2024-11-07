@@ -1,41 +1,32 @@
 <?php
-defined('TYPO3_MODE') or die();
+
+/**
+ * PbConcertlist
+ */
+
+use PeterBenke\PbConcertlist\Controller\ConcertController;
+
+/**
+ * TYPO3
+ */
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
+defined('TYPO3') or die();
 
 /**
  * Configure plugin
  */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'PeterBenke.pb_concertlist',
-	'Fepluginconcertlist',
-	[
-		'PeterBenke\PbConcertlist\Controller\ConcertController' => 'list',
-	],
-	// non-cacheable actions
-	[]
+ExtensionUtility::configurePlugin(
+    'PbConcertlist',
+    'Fepluginconcertlist',
+    [
+        ConcertController::class => 'list',
+    ]
 );
-
-/**
- * Register icons
- */
-if (TYPO3_MODE == 'BE') {
-	$pageType = 'pbconclist'; // a maximum of 10 characters
-	$icons = [
-		'ext-pbconcertlist-wizard-icon' => 'plugin_wizard.svg',
-		'apps-pagetree-folder-contains-' . $pageType => 'apps-pagetree-folder-contains-pb_concertlist.svg'
-	];
-	/** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-	foreach ($icons as $identifier => $filename) {
-		$iconRegistry->registerIcon(
-			$identifier,
-			$iconRegistry->detectIconProvider($filename),
-			['source' => 'EXT:pb_concertlist/Resources/Public/Icons/' . $filename]
-		);
-	}
-}
 
 /**
  * Page TsConfig
  */
-// -----------------------------------------------------------------------------------------------------------------------------------------
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pb_concertlist/Configuration/TSConfig/ContentElementWizard.ts">');
+ExtensionManagementUtility::addPageTSConfig('@import \'EXT:pb_concertlist/Configuration/TSConfig/ContentElementWizard.tsconfig\'');
