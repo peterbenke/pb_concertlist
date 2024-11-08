@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PeterBenke\PbConcertlist\Controller;
 
 /**
@@ -20,6 +22,7 @@ use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
  */
 
 use Psr\Http\Message\ResponseInterface;
+use TYPO3Fluid\Fluid\View\ViewInterface;
 
 
 /**
