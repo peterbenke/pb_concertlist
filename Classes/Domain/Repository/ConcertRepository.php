@@ -92,14 +92,12 @@ class ConcertRepository extends Repository
                 $constraints[] = $query->greaterThanOrEqual('date', time() - 86400);
                 $query->setOrderings(['date' => QueryInterface::ORDER_ASCENDING]);
                 $query->setLimit(1);
-
                 break;
 
             // Within a period
             case 5:
                 $constraints[] = $query->greaterThanOrEqual('date', $dateFrom);
                 $constraints[] = $query->lessThanOrEqual('date', $dateTo);
-
                 break;
 
         }
@@ -113,10 +111,6 @@ class ConcertRepository extends Repository
         if (!empty($constraints)) {
             $query->matching($query->logicalAnd(...array_values($constraints)));
         }
-
-        // $queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
-        // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getSQL());
-        // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getParameters());
 
         return $query->execute();
 
