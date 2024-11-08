@@ -48,14 +48,6 @@ Concert list for bands
     a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
 
-    **Table of Contents**
+    **Documentation**
 
-.. toctree::
-    :maxdepth: 3
-    :titlesonly:
-
-    Introduction/Index
-    Administration/Index
-    UsersManual/Index
-    KnownProblems/Index
-    Changelog/Index
+	See documentation on `github <https://github.com/peterbenke/pb_concertlist>`__.
