@@ -7,9 +7,9 @@ This extension generates a list of concerts for bands
 
 ## Installation
 
-- Download the extension and install it with the extension manager or install it via composer
-- Include the static Typoscript "pb_concertlist" in your template
-- Go to the constant editor and input the pid (page Id) from the sysfolder, where the concerts are stored. (Otherwise select this sysfolder in your content plugin "Records Stora Page")
+- Download the extension and install it via composer
+- Include the static Typoscript "Concert list (pb_concertlist)" in your template
+- Go to the constant editor and input the pid (page uid) from the sysfolder, where the concerts are stored. (Otherwise select this sysfolder in your content plugin "Records Storage Page")
 - If you want to create your own template, you can change the path to this template in the constant editor (“Path to template root (FE)”). Be sure that you have a folder named “Concert” within this path and in this folder a file named “List.html”.
 
 Look at the original template, this will help you to create your own template:
@@ -58,7 +58,7 @@ If you want to have different plugins on one page, you can style them with the f
 
 ### Weekdays
 
-You have the possibility to output weekdays. Use the follwing marker in your template:
+You have the possibility to output weekdays. Use the following marker in your template:
 
 **Short (Su, Mo, Tu,...)**
 
@@ -77,3 +77,9 @@ If you would like to change the strings, just change the typoscript:
 			tx_pbconcertlist_domain_model_concert.weekday.long.1 = Long Version of Monday
 		}
 	}
+
+### Known problems
+
+If you upgrade from a former TYPO3 version, it might be possible, that you have to create your plugin(s) new.
+Maybe you have to include the static Typoscript again.
+
