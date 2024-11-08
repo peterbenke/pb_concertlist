@@ -1,11 +1,18 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die('Access denied');
+
+/**
+ * TYPO3
+ */
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+if (!defined('TYPO3')) {
+    die('Access denied');
 }
 
 // Add static template configuration
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-	'pb_concertlist',
-	'Configuration/TypoScript',
-	'Concert list'
+ExtensionManagementUtility::addStaticFile(
+    'pb_concertlist',
+    'Configuration/TypoScript',
+    'Concert list'
 );

@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 return [
 
@@ -8,7 +8,6 @@ return [
 		'label' => 'url',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
 		'dividers2tabs' => TRUE,
 
 		'versioningWS' => 2,
@@ -28,9 +27,9 @@ return [
 		],
 		'searchFields' => 'url,',
 		'iconfile' => 'EXT:pb_concertlist/Resources/Public/Icons/tx_pbconcertlist_domain_model_url.svg',
-	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, url',
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
 	],
 	'types' => [
 		'1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, url,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
@@ -42,28 +41,15 @@ return [
 		'sys_language_uid' => [
 			'exclude' => true,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-			'config' => [
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'special' => 'languages',
-				'items' => [
-					[
-						'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-						-1,
-						'flags-multiple'
-					],
-				],
-				'default' => 0,
-			]
+			'config' => ['type' => 'language']
 		],
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
 				'items' => [
-					['', 0],
+					['label' => '', 'value' => 0],
 				],
 				'foreign_table' => 'tx_pbconcertlist_domain_model_url',
 				'foreign_table_where' => 'AND tx_pbconcertlist_domain_model_url.pid=###CURRENT_PID### AND tx_pbconcertlist_domain_model_url.sys_language_uid IN (-1,0)',
@@ -89,12 +75,6 @@ return [
 				'type' => 'check',
 				'renderType' => 'checkboxToggle',
 				'default' => 0,
-				'items' => [
-					[
-						0 => '',
-						1 => '',
-					]
-				],
 			]
 		],
 		'starttime' => [

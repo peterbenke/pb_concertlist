@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 return [
 
@@ -8,7 +8,6 @@ return [
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
 		'dividers2tabs' => TRUE,
 
 		'versioningWS' => 2,
@@ -29,9 +28,9 @@ return [
 		],
 		'searchFields' => 'title,date,location,address,description,mark_as_new_until,url,',
 		'iconfile' => 'EXT:pb_concertlist/Resources/Public/Icons/tx_pbconcertlist_domain_model_concert.svg',
-	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, date, location, address, description, contact, privateconcert, status, fee, mark_as_new_until, url',
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
 	],
 	'types' => [
 		'1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, date, location, address, description, contact, privateconcert, status, fee, mark_as_new_until, url,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
@@ -43,28 +42,15 @@ return [
 		'sys_language_uid' => [
 			'exclude' => true,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-			'config' => [
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'special' => 'languages',
-				'items' => [
-					[
-						'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-						-1,
-						'flags-multiple'
-					],
-				],
-				'default' => 0,
-			]
+			'config' => ['type' => 'language']
 		],
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
 				'items' => [
-					['', 0],
+					['label' => '', 'value' => 0],
 				],
 				'foreign_table' => 'tx_pbconcertlist_domain_model_concert',
 				'foreign_table_where' => 'AND tx_pbconcertlist_domain_model_concert.pid=###CURRENT_PID### AND tx_pbconcertlist_domain_model_concert.sys_language_uid IN (-1,0)',
@@ -90,12 +76,6 @@ return [
 				'type' => 'check',
 				'renderType' => 'checkboxToggle',
 				'default' => 0,
-				'items' => [
-					[
-						0 => '',
-						1 => '',
-					]
-				],
 			]
 		],
 		'starttime' => [
@@ -136,19 +116,20 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+    'required' => true
 			],
 		],
 		'date' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.date',
 			'config' => [
-				'type' => 'input',
-				'renderType' => 'inputDateTime',
+				'type' => 'datetime',
 				'size' => 7,
-				'eval' => 'date,required',
 				'checkbox' => 1,
-				'default' => time()
+				'default' => time(),
+    'format' => 'date',
+    'required' => true
 			],
 		],
 		'location' => [
@@ -157,7 +138,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+    'required' => true
 			],
 		],
 		'address' => [
@@ -204,8 +186,8 @@ return [
 				'type' => 'select',
 				'renderType' => 'selectSingle',
 				'items' => [
-					['LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.0', 0],
-					['LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.1', 1],
+					['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.0', 'value' => 0],
+					['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.1', 'value' => 1],
 				],
 				'size' => 1,
 				'maxitems' => 1,
