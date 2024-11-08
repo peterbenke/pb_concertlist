@@ -9,6 +9,8 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
+// see: https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/ApiOverview/FlexForms/Index.html
+
 ExtensionUtility::registerPlugin(
     'PbConcertlist',
     'Fepluginconcertlist',

@@ -16,6 +16,7 @@
                     <onChange>reload</onChange>
                     <config>
                         <type>select</type>
+                        <renderType>selectSingle</renderType>
                         <items type="array">
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
@@ -60,10 +61,8 @@
                     <displayCond>FIELD:settings.selection:=:5</displayCond>
                     <config>
                         <type>input</type>
-                        <size>8</size>
-                        <max>20</max>
-                        <eval>date</eval>
-                        <checkbox>1</checkbox>
+                        <renderType>inputDateTime</renderType>
+                        <eval>datetime</eval>
                     </config>
                 </TCEforms>
             </settings.dateFrom>
@@ -76,10 +75,8 @@
                     <displayCond>FIELD:settings.selection:=:5</displayCond>
                     <config>
                         <type>input</type>
-                        <size>8</size>
-                        <max>20</max>
-                        <eval>date</eval>
-                        <checkbox>1</checkbox>
+                        <renderType>inputDateTime</renderType>
+                        <eval>datetime</eval>
                     </config>
                 </TCEforms>
             </settings.dateTo>
@@ -91,6 +88,7 @@
                     </label>
                     <config>
                         <type>select</type>
+                        <renderType>selectSingle</renderType>
                         <items type="array">
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
@@ -123,6 +121,7 @@
                     <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
                     <config>
                         <type>select</type>
+                        <renderType>selectSingle</renderType>
                         <items type="array">
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
@@ -156,7 +155,6 @@
                     </config>
                 </TCEforms>
             </settings.number>
-
 
         </el>
     </ROOT>
