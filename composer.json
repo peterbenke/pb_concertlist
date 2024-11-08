@@ -16,7 +16,7 @@
       "homepage": "https://www.typomotor.de"
     }
   ],
-  "license": ["GPL-2.0-or-later"],
+  "license": ["GPL-2.0+"],
   "require": {
     "php": ">=8.1.0",
     "typo3/cms-core": "^12.4"
@@ -24,6 +24,11 @@
   "autoload": {
     "psr-4": {
       "PeterBenke\\PbConcertlist\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "pb_concertlist"
     }
   }
 }
