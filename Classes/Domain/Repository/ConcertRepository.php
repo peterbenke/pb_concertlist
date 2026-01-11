@@ -22,6 +22,7 @@ class ConcertRepository extends Repository
      * @param array $sorting
      * @return QueryResultInterface|list<array<string,mixed>>
      */
+    #[\Override]
     public function findAll(array $sorting = ['date' => QueryInterface::ORDER_DESCENDING]): QueryResultInterface|array
     {
         $query = $this->createQuery();

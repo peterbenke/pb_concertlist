@@ -24,6 +24,7 @@ class MarkAsNewViewHelper extends AbstractConditionViewHelper
     /**
      * Initialize arguments
      */
+    #[\Override]
     public function initializeArguments(): void
     {
         $this->registerArgument('markAsNewUntil', 'object', 'DateTime object');
@@ -40,10 +41,8 @@ class MarkAsNewViewHelper extends AbstractConditionViewHelper
 
         if (isset($arguments['markAsNewUntil'])) {
             $date = $arguments['markAsNewUntil'];
-            if ($date instanceof DateTime) {
-                if (date('Ymd') <= $date->format('Ymd')) {
-                    return true;
-                }
+            if ($date instanceof DateTime && date('Ymd') <= $date->format('Ymd')) {
+                return true;
             }
         }
 

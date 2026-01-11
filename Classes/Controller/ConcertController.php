@@ -22,7 +22,6 @@ use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
  */
 
 use Psr\Http\Message\ResponseInterface;
-use TYPO3Fluid\Fluid\View\ViewInterface;
 
 
 /**
@@ -34,18 +33,11 @@ class ConcertController extends ActionController
 {
 
     /**
-     * @var ConcertRepository
-     */
-    protected ConcertRepository $concertRepository;
-
-    /**
      * Constructor.
      * @param ConcertRepository $concertRepository
      */
-    public function __construct(
-        ConcertRepository $concertRepository
-    ) {
-        $this->concertRepository = $concertRepository;
+    public function __construct(protected ConcertRepository $concertRepository)
+    {
     }
 
     /**

@@ -18,7 +18,7 @@ class Url extends AbstractValueObject
     /**
      * @var string|null
      */
-    protected ?string $url;
+    protected ?string $url = null;
 
     /**
      * @return string|null
