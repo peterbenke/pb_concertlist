@@ -24,7 +24,6 @@ class IsOverViewHelper extends AbstractConditionViewHelper
     /**
      * Initialize arguments
      */
-    #[\Override]
     public function initializeArguments(): void
     {
         $this->registerArgument('date', 'object', 'DateTime object');
@@ -41,8 +40,10 @@ class IsOverViewHelper extends AbstractConditionViewHelper
 
         if (isset($arguments['date'])) {
             $date = $arguments['date'];
-            if ($date instanceof DateTime && date('Ymd') > $date->format('Ymd')) {
-                return true;
+            if ($date instanceof DateTime) {
+                if (date('Ymd') > $date->format('Ymd')) {
+                    return true;
+                }
             }
         }
 

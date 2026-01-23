@@ -1,238 +1,212 @@
 <?php
-defined('TYPO3') || die();
+defined('TYPO3') or die();
 
 return [
 
-	'ctrl' => [
-		'title'	=> 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert',
-		'label' => 'title',
-		'tstamp' => 'tstamp',
-		'crdate' => 'crdate',
-		'dividers2tabs' => TRUE,
+    'ctrl' => [
+        'title'	=> 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'dividers2tabs' => TRUE,
 
-		'versioningWS' => 2,
-		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
-		'languageField' => 'sys_language_uid',
-		'transOrigPointerField' => 'l10n_parent',
-		'transOrigDiffSourceField' => 'l10n_diffsource',
+        'versioningWS' => 2,
+        'versioning_followPages' => TRUE,
+        'origUid' => 't3_origuid',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
 
-		// 'sortby' => 'sorting',
-		'default_sortby' => 'ORDER BY date DESC',
+        // 'sortby' => 'sorting',
+        'default_sortby' => 'ORDER BY date DESC',
 
-		'delete' => 'deleted',
-		'enablecolumns' => [
-			'disabled' => 'hidden',
-			'starttime' => 'starttime',
-			'endtime' => 'endtime',
-		],
-		'searchFields' => 'title,date,location,address,description,mark_as_new_until,url,',
-		'iconfile' => 'EXT:pb_concertlist/Resources/Public/Icons/tx_pbconcertlist_domain_model_concert.svg',
+        'delete' => 'deleted',
+        'enablecolumns' => [
+            'disabled' => 'hidden',
+            'starttime' => 'starttime',
+            'endtime' => 'endtime',
+        ],
+        'searchFields' => 'title,date,location,address,description,mark_as_new_until,url,',
+        'iconfile' => 'EXT:pb_concertlist/Resources/Public/Icons/tx_pbconcertlist_domain_model_concert.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
-	],
-	'types' => [
-		'1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, date, location, address, description, contact, privateconcert, status, fee, mark_as_new_until, url,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
-	],
-	'palettes' => [
-		'1' => ['showitem' => ''],
-	],
-	'columns' => [
-		'sys_language_uid' => [
-			'exclude' => true,
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-			'config' => ['type' => 'language']
-		],
-		'l10n_parent' => [
-			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-			'config' => [
-				'type' => 'select',
-				'items' => [
-					['label' => '', 'value' => 0],
-				],
-				'foreign_table' => 'tx_pbconcertlist_domain_model_concert',
-				'foreign_table_where' => 'AND tx_pbconcertlist_domain_model_concert.pid=###CURRENT_PID### AND tx_pbconcertlist_domain_model_concert.sys_language_uid IN (-1,0)',
-			],
-		],
-		'l10n_diffsource' => [
-			'config' => [
-				'type' => 'passthrough',
-			],
-		],
-		't3ver_label' => [
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-			'config' => [
-				'type' => 'input',
-				'size' => 30,
-				'max' => 255,
-			]
-		],
-		'hidden' => [
-			'exclude' => true,
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
-			'config' => [
-				'type' => 'check',
-				'renderType' => 'checkboxToggle',
-				'default' => 0,
-			]
-		],
-		'starttime' => [
-			'exclude' => 1,
-			'l10n_mode' => 'mergeIfNotBlank',
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'max' => 20,
-				'eval' => 'datetime',
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				],
-			],
-		],
-		'endtime' => [
-			'exclude' => 1,
-			'l10n_mode' => 'mergeIfNotBlank',
-			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'max' => 20,
-				'eval' => 'datetime',
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				],
-			],
-		],
-		'title' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.title',
-			'config' => [
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim',
-    'required' => true
-			],
-		],
-		'date' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.date',
-			'config' => [
-				'type' => 'datetime',
-				'size' => 7,
-				'checkbox' => 1,
-				'default' => time(),
-    'format' => 'date',
-    'required' => true
-			],
-		],
-		'location' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.location',
-			'config' => [
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim',
-    'required' => true
-			],
-		],
-		'address' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.address',
-			'config' => [
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
-				'eval' => 'trim'
-			],
-		],
-		'description' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.description',
-			'config' => [
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
-				'eval' => 'trim'
-			],
-		],
-		'contact' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.contact',
-			'config' => [
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
-				'eval' => 'trim'
-			],
-		],
-		'privateconcert' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.privateconcert',
-			'config' => [
-				'type' => 'check',
-			],
-		],
-		'status' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status',
-			'config' => [
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'items' => [
-					['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.0', 'value' => 0],
-					['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.1', 'value' => 1],
-				],
-				'size' => 1,
-				'maxitems' => 1,
-			]
-		],
-		'fee' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.fee',
-			'config' => [
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			],
-		],
-		'mark_as_new_until' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.mark_as_new_until',
-			'config' => [
-				'type' => 'input',
-				'size' => 7,
-				'eval' => 'date',
-				'checkbox' => 1,
-				'default' => time()
-			],
-		],
-		'url' => [
-			'exclude' => 0,
-			'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.url',
-			'config' => [
-				'type' => 'inline',
-				'foreign_table' => 'tx_pbconcertlist_domain_model_url',
-				'foreign_field' => 'concert',
+    ],
+    'types' => [
+        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, date, location, address, description, contact, privateconcert, status, fee, mark_as_new_until, url,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
+    ],
+    'palettes' => [
+        '1' => ['showitem' => ''],
+    ],
+    'columns' => [
+        'sys_language_uid' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'config' => ['type' => 'language']
+        ],
+        'l10n_parent' => [
+            'displayCond' => 'FIELD:sys_language_uid:>:0',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
+                'items' => [
+                    ['label' => '', 'value' => 0],
+                ],
+                'foreign_table' => 'tx_pbconcertlist_domain_model_concert',
+                'foreign_table_where' => 'AND tx_pbconcertlist_domain_model_concert.pid=###CURRENT_PID### AND tx_pbconcertlist_domain_model_concert.sys_language_uid IN (-1,0)',
+            ],
+        ],
+        'l10n_diffsource' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        't3ver_label' => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+            ]
+        ],
+        'hidden' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'default' => 0,
+            ]
+        ],
+        'starttime' => [
+            'exclude' => 1,
+            'l10n_mode' => 'mergeIfNotBlank',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+            'config' => [
+                'type' => 'datetime',
+            ],
+        ],
+        'endtime' => [
+            'exclude' => 1,
+            'l10n_mode' => 'mergeIfNotBlank',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+            'config' => [
+                'type' => 'datetime',
+            ],
+        ],
+        'title' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'required' => true
+            ],
+        ],
+        'date' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.date',
+            'config' => [
+                'type' => 'datetime',
+            ],
+        ],
+        'location' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.location',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'required' => true
+            ],
+        ],
+        'address' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.address',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim'
+            ],
+        ],
+        'description' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.description',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim'
+            ],
+        ],
+        'contact' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.contact',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim'
+            ],
+        ],
+        'privateconcert' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.privateconcert',
+            'config' => [
+                'type' => 'check',
+            ],
+        ],
+        'status' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.0', 'value' => 0],
+                    ['label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.status.I.1', 'value' => 1],
+                ],
+                'size' => 1,
+                'maxitems' => 1,
+            ]
+        ],
+        'fee' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.fee',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'mark_as_new_until' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.mark_as_new_until',
+            'config' => [
+                'type' => 'datetime',
+            ],
+        ],
+        'url' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:tx_pbconcertlist_domain_model_concert.url',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_pbconcertlist_domain_model_url',
+                'foreign_field' => 'concert',
 
-				'foreign_sortby' => 'sorting',
+                'foreign_sortby' => 'sorting',
 
-				'maxitems'      => 9999,
-				'appearance' => [
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				],
-			],
-		],
-	],
-
+                'maxitems'      => 9999,
+                'appearance' => [
+                    'collapseAll' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ],
+            ],
+        ],
+    ],
 ];

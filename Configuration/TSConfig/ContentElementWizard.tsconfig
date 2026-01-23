@@ -1,4 +1,3 @@
-/*
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements {
 		pbconcertlist {
@@ -12,4 +11,3 @@ mod.wizards.newContentElement.wizardItems.plugins {
 		}
 	}
 }
-*/

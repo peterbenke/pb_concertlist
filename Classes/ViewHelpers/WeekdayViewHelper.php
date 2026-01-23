@@ -34,7 +34,6 @@ class WeekdayViewHelper extends AbstractViewHelper
      * Returns a weekday as a number
      * @return string
      */
-    #[\Override]
     public function render(): string
     {
 

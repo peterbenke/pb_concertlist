@@ -9,139 +9,151 @@
         <el>
 
             <settings.selection>
-                <label>
-                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType
-                </label>
-                <onChange>reload</onChange>
-                <config>
-                    <type>select</type>
-                    <renderType>selectSingle</renderType>
-                    <items type="array">
-                        <numIndex index="1" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.allConcerts
+                <TCEforms>
+                    <label>
+                        LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType
+                    </label>
+                    <onChange>reload</onChange>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items type="array">
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.allConcerts
+                                </numIndex>
+                                <numIndex index="1">1</numIndex>
                             </numIndex>
-                            <numIndex index="1">1</numIndex>
-                        </numIndex>
-                        <numIndex index="2" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyNew
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyNew
+                                </numIndex>
+                                <numIndex index="1">2</numIndex>
                             </numIndex>
-                            <numIndex index="1">2</numIndex>
-                        </numIndex>
-                        <numIndex index="3" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyOld
+                            <numIndex index="3" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyOld
+                                </numIndex>
+                                <numIndex index="1">3</numIndex>
                             </numIndex>
-                            <numIndex index="1">3</numIndex>
-                        </numIndex>
-                        <numIndex index="4" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyNext
+                            <numIndex index="4" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.onlyNext
+                                </numIndex>
+                                <numIndex index="1">4</numIndex>
                             </numIndex>
-                            <numIndex index="1">4</numIndex>
-                        </numIndex>
-                        <numIndex index="5" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.fromTo
+                            <numIndex index="5" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.concertType.fromTo
+                                </numIndex>
+                                <numIndex index="1">5</numIndex>
                             </numIndex>
-                            <numIndex index="1">5</numIndex>
-                        </numIndex>
-                    </items>
-                </config>
+                        </items>
+                    </config>
+                </TCEforms>
             </settings.selection>
 
             <settings.dateFrom>
-                <label>
-                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.fromTo.from
-                </label>
-                <displayCond>FIELD:settings.selection:=:5</displayCond>
-                <config>
-                    <type>input</type>
-                    <renderType>inputDateTime</renderType>
-                    <eval>datetime</eval>
-                </config>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.fromTo.from
+                    </label>
+                    <displayCond>FIELD:settings.selection:=:5</displayCond>
+                    <config>
+                        <type>input</type>
+                        <renderType>inputDateTime</renderType>
+                        <eval>datetime</eval>
+                    </config>
+                </TCEforms>
             </settings.dateFrom>
 
             <settings.dateTo>
-                <label>
-                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.fromTo.to
-                </label>
-                <displayCond>FIELD:settings.selection:=:5</displayCond>
-                <config>
-                    <type>input</type>
-                    <renderType>inputDateTime</renderType>
-                    <eval>datetime</eval>
-                </config>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.fromTo.to
+                    </label>
+                    <displayCond>FIELD:settings.selection:=:5</displayCond>
+                    <config>
+                        <type>input</type>
+                        <renderType>inputDateTime</renderType>
+                        <eval>datetime</eval>
+                    </config>
+                </TCEforms>
             </settings.dateTo>
 
             <settings.public>
-                <label>
-                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public
-                </label>
-                <config>
-                    <type>select</type>
-                    <renderType>selectSingle</renderType>
-                    <items type="array">
-                        <numIndex index="1" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.allConcerts
+                <TCEforms>
+                    <label>
+                        LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items type="array">
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.allConcerts
+                                </numIndex>
+                                <numIndex index="1">all</numIndex>
                             </numIndex>
-                            <numIndex index="1">all</numIndex>
-                        </numIndex>
-                        <numIndex index="2" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.onlyPublic
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.onlyPublic
+                                </numIndex>
+                                <numIndex index="1">public</numIndex>
                             </numIndex>
-                            <numIndex index="1">public</numIndex>
-                        </numIndex>
-                        <numIndex index="3" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.onlyPrivate
+                            <numIndex index="3" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.public.onlyPrivate
+                                </numIndex>
+                                <numIndex index="1">private</numIndex>
                             </numIndex>
-                            <numIndex index="1">private</numIndex>
-                        </numIndex>
-                    </items>
-                </config>
+                        </items>
+                    </config>
+                </TCEforms>
             </settings.public>
 
             <settings.sorting>
-                <label>
-                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting
-                </label>
-                <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
-                <config>
-                    <type>select</type>
-                    <renderType>selectSingle</renderType>
-                    <items type="array">
-                        <numIndex index="1" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting.dateDesc
+                <TCEforms>
+                    <label>
+                        LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting
+                    </label>
+                    <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items type="array">
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting.dateDesc
+                                </numIndex>
+                                <numIndex index="1">DESC</numIndex>
                             </numIndex>
-                            <numIndex index="1">DESC</numIndex>
-                        </numIndex>
-                        <numIndex index="2" type="array">
-                            <numIndex index="0">
-                                LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting.dateAsc
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting.dateAsc
+                                </numIndex>
+                                <numIndex index="1">ASC</numIndex>
                             </numIndex>
-                            <numIndex index="1">ASC</numIndex>
-                        </numIndex>
-                    </items>
-                </config>
+                        </items>
+                    </config>
+                </TCEforms>
             </settings.sorting>
 
             <settings.number>
-                <label>LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.number
-                </label>
-                <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
-                <config>
-                    <type>input</type>
-                    <size>4</size>
-                    <max>4</max>
-                    <eval>int,trim</eval>
-                    <default>0</default>
-                    <checkbox>1</checkbox>
-                </config>
+                <TCEforms>
+                    <label>LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.number
+                    </label>
+                    <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
+                    <config>
+                        <type>input</type>
+                        <size>4</size>
+                        <max>4</max>
+                        <eval>int,trim</eval>
+                        <default>0</default>
+                        <checkbox>1</checkbox>
+                    </config>
+                </TCEforms>
             </settings.number>
 
         </el>

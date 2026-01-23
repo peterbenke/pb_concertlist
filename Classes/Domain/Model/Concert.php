@@ -27,60 +27,60 @@ class Concert extends AbstractEntity
      * @var string|null
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected ?string $title = null;
+    protected ?string $title;
 
     /**
      * @var DateTime|null
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected ?DateTime $date = null;
+    protected ?DateTime $date;
 
     /**
      * @var string|null
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected ?string $location = null;
+    protected ?string $location;
 
     /**
      * @var string|null
      */
-    protected ?string $address = null;
+    protected ?string $address;
 
     /**
      * @var string|null
      */
-    protected ?string $description = null;
+    protected ?string $description;
 
     /**
      * @var string|null
      */
-    protected ?string $contact = null;
+    protected ?string $contact;
 
     /**
      * @var int|null
      */
-    protected ?int $privateconcert = null;
+    protected ?int $privateconcert;
 
     /**
      * @var string|null
      */
-    protected ?string $status = null;
+    protected ?string $status;
 
     /**
      * @var string|null
      */
-    protected ?string $fee = null;
+    protected ?string $fee;
 
     /**
      * @var DateTime|null
      */
-    protected ?DateTime $markAsNewUntil = null;
+    protected ?DateTime $markAsNewUntil;
 
     /**
      * Attention: qualifier has to be complete and cannot be replaced with an import!
      * @var ObjectStorage<Url>|null
      */
-    protected ?ObjectStorage $url = null;
+    protected ?ObjectStorage $url;
 
     /**
      * @return string|null
