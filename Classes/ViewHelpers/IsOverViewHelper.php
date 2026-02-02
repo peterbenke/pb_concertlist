@@ -6,6 +6,7 @@ namespace PeterBenke\PbConcertlist\ViewHelpers;
  * TYPO3Fluid
  */
 
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 
 /**
@@ -33,12 +34,12 @@ class IsOverViewHelper extends AbstractConditionViewHelper
 
     /**
      * Evaluate
-     * @param array|null $arguments
+     * @param array $arguments
+     * @param RenderingContextInterface $renderingContext
      * @return bool
      */
-    protected static function evaluateCondition($arguments = null): bool
+    public static function verdict(array $arguments, RenderingContextInterface $renderingContext): bool
     {
-
         if (isset($arguments['date'])) {
             $date = $arguments['date'];
             if ($date instanceof DateTime && date('Ymd') > $date->format('Ymd')) {
@@ -47,7 +48,6 @@ class IsOverViewHelper extends AbstractConditionViewHelper
         }
 
         return false;
-
     }
 
 }

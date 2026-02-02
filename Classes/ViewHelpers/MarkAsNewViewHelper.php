@@ -6,6 +6,7 @@ namespace PeterBenke\PbConcertlist\ViewHelpers;
  * TYPO3Fluid
  */
 
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 
 /**
@@ -33,10 +34,11 @@ class MarkAsNewViewHelper extends AbstractConditionViewHelper
 
     /**
      * Evaluate
-     * @param array|null $arguments
+     * @param array $arguments
+     * @param RenderingContextInterface $renderingContext
      * @return bool
      */
-    protected static function evaluateCondition($arguments = null): bool
+    public static function verdict(array $arguments, RenderingContextInterface $renderingContext): bool
     {
 
         if (isset($arguments['markAsNewUntil'])) {
