@@ -49,13 +49,20 @@ class ConcertController extends ActionController
     public function listAction(): ResponseInterface
     {
 
+        $selection = $this->settings['selection'] ?? 0;
+        $public = $this->settings['public'] ?? 'public';
+        $sorting = $this->settings['sorting'] ?? 'ASC';
+        $number = $this->settings['number'] ?? 0;
+        $dateFrom = $this->settings['dateFrom'] ?? '';
+        $dateTo = $this->settings['dateTo'] ?? '';
+
         $concerts = $this->concertRepository->findAllBySelection(
-            intval($this->settings['selection']),
-            $this->settings['public'],
-            $this->settings['sorting'],
-            intval($this->settings['number']),
-            $this->settings['dateFrom'],
-            $this->settings['dateTo']
+            intval($selection),
+            $public,
+            $sorting,
+            intval($number),
+            $dateFrom,
+            $dateTo
         );
 
         $this->view->assign('concerts', $concerts);

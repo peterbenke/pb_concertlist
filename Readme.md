@@ -9,7 +9,7 @@ This extension generates a list of concerts for bands
 
 - Download the extension and install it via composer
 - Include the static Typoscript "Concert list (pb_concertlist)" in your template
-- Go to the constant editor and input the pid (page uid) from the sysfolder, where the concerts are stored. (Otherwise select this sysfolder in your content plugin "Records Storage Page")
+- Go to the constant editor and input the pid (page uid) from the sysfolder, where the concerts are stored.
 - If you want to create your own template, you can change the path to this template in the constant editor (“Path to template root (FE)”). Be sure that you have a folder named “Concert” within this path and in this folder a file named “List.html”.
 
 Look at the original template, this will help you to create your own template:

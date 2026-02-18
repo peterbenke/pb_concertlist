@@ -113,6 +113,16 @@ class ConcertRepository extends Repository
             $query->matching($query->logicalAnd(...array_values($constraints)));
         }
 
+        // Ignore storage pid
+        // $query->getQuerySettings()->setRespectStoragePage(false);
+
+        // Debug
+        // $typo3DbQueryParser = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
+        // $queryBuilder = $typo3DbQueryParser->convertQueryToDoctrineQueryBuilder($query);
+        // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryBuilder->getSQL());
+        // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryBuilder->getParameters());
+        // die();
+
         return $query->execute();
 
     }
