@@ -114,7 +114,7 @@ class ConcertRepository extends Repository
         }
 
         // Ignore storage pid
-        // $query->getQuerySettings()->setRespectStoragePage(false);
+        $query->getQuerySettings()->setRespectStoragePage(false);
 
         // Debug
         // $typo3DbQueryParser = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);

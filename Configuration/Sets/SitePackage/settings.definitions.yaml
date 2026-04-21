@@ -1,0 +1,16 @@
+categories:
+  pbconcertlist: ~
+
+settings:
+  pbconcertlist.view.templateRootPath:
+    default: 'EXT:pb_concertlist/Resources/Private/Templates/'
+    type: string
+    category: pbconcertlist
+  pbconcertlist.view.partialRootPath:
+    default: 'EXT:pb_concertlist/Resources/Private/Partials/'
+    type: string
+    category: pbconcertlist
+  pbconcertlist.view.layoutRootPath:
+    default: 'EXT:pb_concertlist/Resources/Private/Layouts/'
+    type: string
+    category: pbconcertlist

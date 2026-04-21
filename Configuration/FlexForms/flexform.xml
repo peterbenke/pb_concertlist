@@ -109,7 +109,14 @@
                 <label>
                     LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.selection.sorting
                 </label>
-                <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
+                <displayCond>
+                    <OR>
+                        <numIndex index="0">FIELD:settings.selection:IN:1</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:2</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:3</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:5</numIndex>
+                    </OR>
+                </displayCond>
                 <config>
                     <type>select</type>
                     <renderType>selectSingle</renderType>
@@ -133,7 +140,14 @@
             <settings.number>
                 <label>LLL:EXT:pb_concertlist/Resources/Private/Language/locallang_db.xlf:pi1_flexform.number
                 </label>
-                <displayCond>FIELD:settings.selection:=:1,2,3,5</displayCond>
+                <displayCond>
+                    <OR>
+                        <numIndex index="0">FIELD:settings.selection:IN:1</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:2</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:3</numIndex>
+                        <numIndex index="1">FIELD:settings.selection:IN:5</numIndex>
+                    </OR>
+                </displayCond>
                 <config>
                     <type>input</type>
                     <size>4</size>

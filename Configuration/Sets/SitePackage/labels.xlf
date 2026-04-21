@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:pb_concertlist/Configuration/Sets/SitePackage/labels.xlf" date="2024-09-05T08:00:00Z" product-name="pbconcertlist">
+		<header/>
+		<body>
+			<trans-unit id="label">
+				<source>Concert list</source>
+			</trans-unit>
+			<trans-unit id="categories.pbconcertlist">
+				<source>Concert list</source>
+			</trans-unit>
+			<trans-unit id="settings.pbconcertlist.view.templateRootPath">
+				<source>Path to template root (frontend)</source>
+			</trans-unit>
+			<trans-unit id="settings.pbconcertlist.view.partialRootPath">
+				<source>Path to template partials (frontend)</source>
+			</trans-unit>
+			<trans-unit id="settings.pbconcertlist.view.layoutRootPath">
+				<source>Path to template layouts (frontend)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
